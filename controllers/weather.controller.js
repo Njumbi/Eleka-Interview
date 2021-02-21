@@ -1,5 +1,5 @@
 var axios = require("axios");
-var momnet = require('moment');
+var moment = require('moment');
 
 exports.getHomePage = (req, res, next) => {
     res.render('home');
@@ -19,10 +19,29 @@ exports.postWeather = (req, res, next) => {
             headers: headers
         }).then(response => {
 
-            // format to days using moment
-            var day = moment().format('dddd');  
+            var daysWeather = []
 
-            res.json(response)
+            // format to days using moment
+            response.data.list.forEach(element => {
+                // format data to return to table
+                const fData = {
+                    'time': moment(element.dt_txt).format('ddd h:mm:ss a'),
+                    'humidity': element.main.humidity,
+                    "temp_min": element.main.temp_min,
+                    "temp_max": element.main.temp_max,
+                    "pressure": element.main.pressure
+                }
+                daysWeather.push(fData);
+            });
+
+            const responseData = {
+                'cityName': response.data.city.name,
+                'coord': response.data.city.coord,
+                'id': response.data.city.id,
+                'weather': daysWeather
+            }
+
+            res.json(responseData);
         })
         .catch(error => {
             console.log(error);

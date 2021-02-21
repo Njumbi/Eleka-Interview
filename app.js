@@ -21,6 +21,6 @@ app.use(routes)
 
 
 // starts server
-app.listen(7000, () => {
+app.listen(3000, () => {
     console.log("app has started")
 })

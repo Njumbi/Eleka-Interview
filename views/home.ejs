@@ -36,34 +36,27 @@
                 <span class="visually-hidden">Loading...</span>
             </div>
         </div>
-        <div class="row" style="margin: 2%;">
-            <table id="weather_data" class="table table-bordered">
+
+
+        <div id="weather_data" class="row" style="margin: 2%;">
+
+            <div class="row">
+                <p id="cityName" class="fw-bolder">Name of the city</p>
+                <p id="cityId" class="fw-bold">Bolder weight text (relative to the parent element).</p>
+                <p id="cord" class="fw-normal">Normal weight text.</p>
+            </div>
+            <table id="weather_table" class="table table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Max Temperature</th>
+                        <th scope="col">Min Temperature</th>
+                        <th scope="col">Humidity</th>
+                        <th scope="col">Pressure</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>
