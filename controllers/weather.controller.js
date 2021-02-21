@@ -27,6 +27,7 @@ exports.postWeather = (req, res, next) => {
                 const fData = {
                     'time': moment(element.dt_txt).format('ddd h:mm:ss a'),
                     'humidity': element.main.humidity,
+                    "temp": element.main.temp,
                     "temp_min": element.main.temp_min,
                     "temp_max": element.main.temp_max,
                     "pressure": element.main.pressure
